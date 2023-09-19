@@ -17,17 +17,19 @@ public class NewsService {
     private String apiKey;
 
     public List<NewsArticle> getNewsHeadlines(String country, String category, String language) {
-        String apiUrl = "https://newsapi.org/v2/top-headlines?country=" + country +
-                "&category=" + category + "&sources?language="+ language + "&apiKey=" + apiKey;
+        String apiUrl = "https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=" + apiKey;
 
         // Make an HTTP GET request to the News API
         NewsApiResponse response = restTemplate.getForObject(apiUrl, NewsApiResponse.class);
+//        System.out.println(response);
 
         // Extract and return headlines from the response
         List<NewsArticle> headlines = new ArrayList<>();
         if (response != null && response.getArticles() != null) {
             for (NewsArticle article : response.getArticles()) {
-                NewsArticle newsArticle = new NewsArticle(article.getTitle() , article.getDescription());
+                System.out.println(article.getMedia());
+                System.out.println(article.getPageUrl());
+                NewsArticle newsArticle = new NewsArticle(article.getTitle() , article.getAbstractText(), article.getPageUrl(), article.getImageUrl());
                 headlines.add(newsArticle);
             }
         }

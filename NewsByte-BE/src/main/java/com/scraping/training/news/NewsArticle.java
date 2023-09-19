@@ -1,15 +1,43 @@
 package com.scraping.training.news;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+
+import java.util.List;
+
+@Data
 public class NewsArticle {
 
     private String title;
-    private String description;
+    @JsonProperty("abstract")
+    private String abstractText;
+    @JsonProperty("url")
+    private String pageUrl;
+    private List<String> imageUrl;
+    @JsonProperty("media")
+    private List<Media> media;
     public NewsArticle() {}
-    public NewsArticle(String title, String description) {
+    public NewsArticle(String title, String abstractText, String pageUrl, List<String> imageUrl) {
         this.title = title;
-        this.description = description;
+        this.abstractText = abstractText;
+        this.pageUrl = pageUrl;
+        this.imageUrl = imageUrl;
+    }
+    public String getPageUrl() {
+        return pageUrl;
     }
 
+    public void setPageUrl(String pageUrl) {
+        this.pageUrl = pageUrl;
+    }
+
+    public List<String> getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl.add(imageUrl);
+    }
     public String getTitle() {
         return title;
     }
@@ -18,11 +46,17 @@ public class NewsArticle {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAbstractText() {
+        return abstractText;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAbstractText(String abstractText) {
+        this.abstractText = abstractText;
+    }
+    public void setMedia(List<Media> Media) {
+        this.media = Media;
+    }
+    public List<Media> getMedia() {
+        return media;
     }
 }
