@@ -1,5 +1,7 @@
 package com.scraping.training.news;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -22,14 +24,22 @@ public class NewsService {
         // Make an HTTP GET request to the News API
         NewsApiResponse response = restTemplate.getForObject(apiUrl, NewsApiResponse.class);
 //        System.out.println(response);
-
         // Extract and return headlines from the response
         List<NewsArticle> headlines = new ArrayList<>();
+//        List<String> images = new ArrayList<>();
         if (response != null && response.getArticles() != null) {
             for (NewsArticle article : response.getArticles()) {
-                System.out.println(article.getMedia());
-                System.out.println(article.getPageUrl());
-                NewsArticle newsArticle = new NewsArticle(article.getTitle() , article.getAbstractText(), article.getPageUrl(), article.getImageUrl());
+                List<String> images = new ArrayList<>();
+                List<Media> media = article.getMedia();
+                for (Media mediaItem : media) {
+                    List<MediaMetadata> mediaMetadata = mediaItem.getMetadata();
+                    if (mediaMetadata != null && !mediaMetadata.isEmpty()) {
+                        for (MediaMetadata metadata : mediaMetadata) {
+                            images.add(metadata.getUrl());
+                        }
+                    }
+                }
+                NewsArticle newsArticle = new NewsArticle(article.getTitle() , article.getAbstractText(), article.getPageUrl(), article.getMedia(), images);
                 headlines.add(newsArticle);
             }
         }

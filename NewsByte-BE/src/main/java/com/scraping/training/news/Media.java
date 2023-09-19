@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public class Media {
+    private String type;
+    private String caption;
     @JsonProperty("media-metadata")
     private List<MediaMetadata> metadata;
 

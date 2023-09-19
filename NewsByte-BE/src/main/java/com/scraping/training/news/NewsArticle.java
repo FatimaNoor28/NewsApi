@@ -17,10 +17,11 @@ public class NewsArticle {
     @JsonProperty("media")
     private List<Media> media;
     public NewsArticle() {}
-    public NewsArticle(String title, String abstractText, String pageUrl, List<String> imageUrl) {
+    public NewsArticle(String title, String abstractText, String pageUrl, List<Media> media, List<String> imageUrl) {
         this.title = title;
         this.abstractText = abstractText;
         this.pageUrl = pageUrl;
+        this.media = media;
         this.imageUrl = imageUrl;
     }
     public String getPageUrl() {
