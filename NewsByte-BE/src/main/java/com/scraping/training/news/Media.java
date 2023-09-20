@@ -5,8 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public class Media {
-    private String type;
-    private String caption;
+    @JsonProperty("url")
+    private String url;
+
+    public String getUrl(){return url;}
+    public void setUrl(String url){this.url = url;}
     @JsonProperty("media-metadata")
     private List<MediaMetadata> metadata;
 

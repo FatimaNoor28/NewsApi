@@ -2,13 +2,13 @@
 <template>
   <div class="news-card" @click="openArticle(article.url)">
     <header>
-      <img v-if="article.urlToImage" :src="article.urlToImage" alt="">
+      <img v-if="article.image" :src="article.image" alt="">
       <i v-else class="fas fa-image">dummy image</i>
     </header>
 
     <div class="content">
       <h2>{{ article.title }}</h2>
-      <p>{{ article.description }}</p>
+      <p>{{ article.abstract }}</p>
     </div>
     <div class="footer">
       <i class="fas fa-chevron-right"></i>

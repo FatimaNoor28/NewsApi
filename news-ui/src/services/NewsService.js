@@ -1,13 +1,16 @@
 import axios from 'axios'
 
 
-const NEWS_API_BASE_URL = 'http://localhost:8080/api/news/health';
+const NEWS_API_BASE_URL = 'http://localhost:8080/api/news';
 // const ACCOUNT_GET_BY_NAME_URL = '/api/v1/account/getAccount';
 
 class NewsService {
 
-    getHealthNews() {
-        return axios.get(NEWS_API_BASE_URL);
+    getNews() {
+        return axios.get(`${NEWS_API_BASE_URL}/headlines`);
+    }
+    getNewsType(category){
+        return axios.get(`${NEWS_API_BASE_URL}/${category}`)
     }
 
 }

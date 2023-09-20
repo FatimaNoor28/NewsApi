@@ -1,6 +1,6 @@
 import NewsUI from "./components/News.vue"
 import NewsList from "./components/NewsList.vue"
-
+import NYCategories from "./components/NYCategories.vue" 
 import { createRouter, createWebHistory } from "vue-router";
 
 
@@ -14,6 +14,11 @@ const routes = [
       name: "NewsList",
       component: NewsList,
       path: "/getNews",
+    }, 
+    {
+      name: "NYCategories",
+      component: NYCategories,
+      path: "/category",
     }, 
 ]
 

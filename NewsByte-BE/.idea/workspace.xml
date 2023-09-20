@@ -5,21 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50fc47e9-150d-45e7-adbb-22b3e76c609d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/Docs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/Media.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsArticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/backend-1.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/backend-1.0.0.jar.original" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/Media.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scraping/training/news/Media.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/MediaMetadata.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scraping/training/news/MediaMetadata.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsArticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsArticle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/src/components/NewsCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/components/NewsCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/src/components/NewsList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/components/NewsList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/src/services/NewsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/services/NewsService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,22 +28,26 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": -1
+}]]></component>
   <component name="ProjectId" id="2Vcd3BdPATAtAm1agdctemEyFon" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -54,7 +57,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RunManager">

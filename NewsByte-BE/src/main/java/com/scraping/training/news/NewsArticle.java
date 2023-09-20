@@ -13,16 +13,18 @@ public class NewsArticle {
     private String abstractText;
     @JsonProperty("url")
     private String pageUrl;
-    private List<String> imageUrl;
+    //private List<String> imageUrl;
+    String image;
     @JsonProperty("media")
     private List<Media> media;
     public NewsArticle() {}
-    public NewsArticle(String title, String abstractText, String pageUrl, List<Media> media, List<String> imageUrl) {
+    public NewsArticle(String title, String abstractText, String pageUrl, List<Media> media, List<String> imageUrl, String img) {
         this.title = title;
         this.abstractText = abstractText;
         this.pageUrl = pageUrl;
-        this.media = media;
-        this.imageUrl = imageUrl;
+//        this.media = media;
+//        this.imageUrl = imageUrl;
+        this.image = img;
     }
     public String getPageUrl() {
         return pageUrl;
@@ -32,13 +34,13 @@ public class NewsArticle {
         this.pageUrl = pageUrl;
     }
 
-    public List<String> getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl.add(imageUrl);
-    }
+//    public List<String> getImageUrl() {
+//        return imageUrl;
+//    }
+//
+//    public void setImageUrl(String imageUrl) {
+//        this.imageUrl.add(imageUrl);
+//    }
     public String getTitle() {
         return title;
     }
@@ -59,5 +61,13 @@ public class NewsArticle {
     }
     public List<Media> getMedia() {
         return media;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

@@ -1,12 +1,15 @@
 <!-- NewsList.vue -->
 <template>
+  
   <div>
     <div class="category-selector">
+      <button @click="getHealthNews" class="btn btn-primary"
+        style=" outline-color: rgb(82, 54, 20);  margin-left:1cm; margin-top:2cm; height:1.5cm; width:5cm; background-color: #7da4ad; font-size:21px; font-family:'Times New Roman', Times, serif">
+        Health News</button>
       <!-- Add buttons or links for categories here -->
     </div>
     <div class="news-cards">
-      <news-card v-for="(article, index) in articles" :key="index" :article="article"
-        ></news-card>
+      <news-card v-for="(article, index) in articles" :key="index" :article="article"></news-card>
       <!-- <news-card v-for="article in articles" :key="article.title" :article="article" /> -->
     </div>
   </div>
@@ -37,8 +40,13 @@ export default {
     //   console.log("clicked on article");
     //   window.open(url);
     // },
+    getHealthNews() {
+      // Toggle the balance view
+      // NewsService.getHealthNews("health")
+      this.$router.push({name:'NYCategories'});
+    },
     fetchNewsData() {
-      NewsService.getHealthNews()
+      NewsService.getNews()
         .then((response) => {
           if (response && response.data) {
             // Check if response and response.data are defined
