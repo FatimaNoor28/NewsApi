@@ -23,7 +23,7 @@ public class NewsController {
     }
 
     @GetMapping("/{category}")
-    public List<Docs> getHealthNews(@RequestParam(value = "category", required = false, defaultValue = "") String category,
+    public List<Docs> getNews(@RequestParam(value = "category", required = false, defaultValue = "") String category,
                                            @RequestParam(value = "language", required = false, defaultValue = "all") String language) throws IOException {
         return newsService.getNews(category);
     }

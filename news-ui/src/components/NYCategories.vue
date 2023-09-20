@@ -16,7 +16,8 @@ export default {
     data() {
         return {
             articles: [],
-            totalResults: 0
+            totalResults: 0,
+            category: '',
         };
     },
     components: {
@@ -26,13 +27,15 @@ export default {
         console.log("in categories mounted");
         this.fetchNews();
     },
-    // created() {
-    //     this.fetchNews();
-    // },
+    created() {
+        this.category = this.$route.query.category;
+        // Use the 'category' variable in your component logic
+        console.log(`Category received: ${this.category}`);
+    },
     methods: {
         fetchNews() {
-            console.log("in categories");
-            NewsService.getNewsType("health")
+            console.log("in categories: ", this.category);
+            NewsService.getNewsType(this.category)
                 .then((response) => {
                     console.log("in categories: service called");
                     console.log(response);

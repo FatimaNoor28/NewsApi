@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50fc47e9-150d-45e7-adbb-22b3e76c609d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/Docs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/Media.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsArticle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/Media.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scraping/training/news/Media.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsArticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsArticle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../news-ui/src/components/NewsCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/components/NewsCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/src/components/NYCategories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/components/NYCategories.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../news-ui/src/components/NewsList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/components/NewsList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../news-ui/src/services/NewsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/services/NewsService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

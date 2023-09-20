@@ -1,6 +1,37 @@
 <!-- NewsList.vue -->
 <template>
-  
+   <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <img src="../../public/news_byte.png" alt="Logo" class="logo-image" style="width: 2.5cm; padding-right: 1cm;" />
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#/entertainmentSection">Entertainment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1">Technology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" @click="getNews('health')">Health</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" @click="getNews('health')">Science</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sports</a>
+            </li>
+          </ul>
+          <div class="search-section">
+            <input type="text" class="search-input" placeholder="Search" style="height: 1cm; border-radius: 0.1cm; background-color: black; color: white; margin-left: 1rem;" />
+          </div>
+        </div>
+      </div>
+    </nav>
   <div>
     <div class="category-selector">
       <button @click="getHealthNews" class="btn btn-primary"
@@ -40,10 +71,10 @@ export default {
     //   console.log("clicked on article");
     //   window.open(url);
     // },
-    getHealthNews() {
+    getNews(category) {
       // Toggle the balance view
       // NewsService.getHealthNews("health")
-      this.$router.push({name:'NYCategories'});
+      this.$router.push({name:'NYCategories', query: { category: category }});
     },
     fetchNewsData() {
       NewsService.getNews()
