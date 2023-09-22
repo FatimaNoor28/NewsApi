@@ -1,32 +1,73 @@
 <template>
   <div class="news-card" @click="openArticle(article.url)">
     <header>
-      <img v-if="article.imageUrl" :src="article.imageUrl[1]" alt="">
-      <i v-else class="fas fa-image">dummy image</i>
+      <img v-if="article.image" :src="article.image" alt="">
+      <img v-else class="fas fa-image" :src="getArticleImage(article, index)" alt="dummy image">
+      <!-- <img :src="getArticleImage(article)" alt=""> -->
     </header>
 
     <div class="content">
       <h2>{{ article.title }}</h2>
       <p>{{ article.abstract }}</p>
+      <!-- <p>Category: {{ category }}</p> -->
     </div>
     <div class="footer">
       <i class="fas fa-chevron-right"></i>
     </div>
-    <!-- <h2>{{ article.title }}</h2>
-      <p>{{ article.description }}</p>
-      <img :src="article.urlToImag" alt="" > -->
   </div>
 </template>
   
 <script>
-// import NewsService from "../services/NewsService";
 
 export default {
   name: 'NYCategoryCard',
   props: {
-    article: Object // The news article data as a prop
+    index: Number,
+    article: Object, // The news article data as a prop
+    category: String
+  },
+  data() {
+    return {
+      newsItems: [],
+
+      cardImages: [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg",
+        "4.jpg",
+        "5.jpg",
+        "6.jpg",
+        "7.jpg",
+        "8.jpg",
+        "9.jpg",
+        "10.jpg",
+        "11.jpg",
+        
+        // "12.jpeg",
+        // "13.avif",
+        // "14.avif",
+        // "15.jpg",
+
+      ],
+    };
   },
   methods: {
+    getArticleImage(article, index) {
+      console.log(index);
+      if (this.cardImages.length === 0) {
+        return null; // Return null if there are no images
+      }
+      // If article.image is not defined or is an empty string, use the default image
+      if (!article.image || article.image.trim() === "") {
+        const effIndex = index % this.cardImages.length;
+        // const imageNumber = this.imageIndex % 10 + 1;
+        const image = `/assets/${this.category}/${this.cardImages[effIndex]}`;
+        console.log("image: ", image);
+        return image;
+      }
+
+      return article.image;
+    },
     openArticle(url) {
       window.open(url);
     }
@@ -48,20 +89,6 @@ export default {
 .news-card:hover {
   background-color: #f0f0f0;
 }
-
-/* .news-card header {
-  text-align: center;
-} */
-
-/* .header {
-  text-align: center;
-}
-
-.header img {
-  max-width: 100%;
-  height: auto;
-} */
-
 
 header {
   display: flex;
@@ -92,6 +119,5 @@ header {
   display: flex;
   justify-content: flex-end;
 }
-
 </style>
   
