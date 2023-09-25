@@ -42,13 +42,7 @@
 export default {
   name: 'NYNavFooter',
   methods: {
-    // openArticle(url) {
-    //   console.log("clicked on article");
-    //   window.open(url);
-    // },
     getNews(category) {
-      // Toggle the balance view
-      // NewsService.getHealthNews("health")
       console.log("passing category to NY Categories page: ", category);
       this.$router.push({ name: 'NYCategories', query: { category: category } });
     },

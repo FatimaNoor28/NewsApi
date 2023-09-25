@@ -50,30 +50,13 @@ export default {
 
     async fetchNews(category) {
       this.category = category;
-      console.log("in categories: ", this.category);
-      const response1 = await NewsService.getNewsType(this.category, 1);
-      console.log("in categories: service called");
-      console.log(response1.data);
-      this.articles = response1.data;
-      const response2 = await NewsService.getNewsType(this.category, 2);
-      console.log("in categories: service called");
-      console.log(response2.data);
-      this.articles = this.articles.concat(response2.data); // Append data from page 2 to existing articles
-      // .then((response) => {
-      //   console.log("in categories: service called");
-      //   console.log(response.data);
-      //   this.articles = response.data;
 
-      // })
-      // .catch((error) => {
-      //   console.error("Error fetching data:", error);
-      //   console.log("in categories: error");
-      // });
-      await NewsService.getNewsType(this.category, 2)
+      await NewsService.getNewsType(this.category)
         .then((response) => {
           console.log("in categories: service called");
           console.log(response.data);
-          this.articles.concat(response.data);
+          this.articles= response.data;
+          this.totalResults = response.data.length;
           // this.articles = response.data;
 
         })

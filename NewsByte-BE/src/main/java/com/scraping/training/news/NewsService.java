@@ -25,7 +25,7 @@ public class NewsService {
     @Value("${nationNews.api.key}")
     private String nation_apiKey;
 
-    public List<NewsArticle> getNewsHeadlines(String category, String language) {
+    public List<NewsArticle> getNyTimesNewsHeadlines(String category, String language) {
         String apiUrl = "https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json" + "?api-key=" + nyApiKey;
 
         // Make an HTTP GET request to the News API
@@ -33,7 +33,7 @@ public class NewsService {
         List<NewsArticle> headlines = new ArrayList<>();
         if (response != null && response.getArticles() != null) {
             for (NewsArticle article : response.getArticles()) {
-                NewsArticle newsArticle = getNewsArticle(article);
+                NewsArticle newsArticle = getNyTimesNewsArticle(article);
                 headlines.add(newsArticle);
             }
         }
@@ -41,7 +41,7 @@ public class NewsService {
         return headlines;
     }
 
-    private static NewsArticle getNewsArticle(NewsArticle article) {
+    private static NewsArticle getNyTimesNewsArticle(NewsArticle article) {
         List<String> images = new ArrayList<>();
         List<Media> media = article.getMedia();
         String img = "";
@@ -54,22 +54,50 @@ public class NewsService {
         return newsArticle;
     }
 
-    public List<Docs> getNews(String category, int page) throws IOException {
-        List<Docs> docs = new ArrayList<>();
-        String apiUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(" +category +")&page="+page+"&api-key="+ nyApiKey;
-        System.out.println("url api called "+ apiUrl);
-        ObjectMapper objectMapper = new ObjectMapper();
+    public List<Docs> getNyTimesNews(String category) throws IOException {
+        int page1 = 1;
+        int page2=2;
+        String apiUrl1 = "https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(" +category +")&page="+page1+"&api-key="+ nyApiKey;
+        String apiUrl2 = "https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(" +category +")&page="+page2+"&api-key="+ nyApiKey;
+        System.out.println("url api called 1st "+ apiUrl2);
+        ObjectMapper objectMapper1 = new ObjectMapper();
 
         // Read data from the API URL
-        JsonNode rootNode = null;
+        JsonNode rootNode1 = null;
         try {
-            rootNode = objectMapper.readTree(new URL(apiUrl));
+            rootNode1 = objectMapper1.readTree(new URL(apiUrl1));
+            System.out.println("get obj mapper 1");
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
 
-        // Extract data from the "docs" array
-        JsonNode docsArray = rootNode.path("response").path("docs");
+//        // Extract data from the "docs" array
+        List<Docs> docs1 = new ArrayList<>();
+        JsonNode docsArray1 = rootNode1.path("response").path("docs");
+        docs1 = getNyTimesDocs(docsArray1, docs1);
+
+        System.out.println("url api called 2nd"+ apiUrl2);
+        ObjectMapper objectMapper2 = new ObjectMapper();
+
+        // Read data from the API URL
+        JsonNode rootNode2 = null;
+        try {
+            rootNode2 = objectMapper2.readTree(new URL(apiUrl2));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        List<Docs> docs2 = new ArrayList<>();
+        JsonNode docsArray = rootNode2.path("response").path("docs");
+        docs2 = getNyTimesDocs(docsArray, docs2);
+        for (Docs docs: docs2
+             ) {
+            docs1.add(docs);
+        }
+        System.out.println("docs 2 addded to 1");
+        return docs1;
+    }
+
+    public List<Docs> getNyTimesDocs(JsonNode docsArray, List<Docs> docs){
         for (JsonNode doc : docsArray) {
             // Check if "multimedia" is not empty
             if (doc.has("multimedia") && doc.get("multimedia").isArray()) {
@@ -97,18 +125,48 @@ public class NewsService {
         return docs;
     }
 
-    public List<NewsArticle> getNationNewsHeadlines(String country, String language) {
+    public List<NewsArticle> getNationNewsHeadlines(String country, String language) throws InterruptedException {
 //        &category=sports
 //        country=pk&
-        String apiUrl = "https://newsdata.io/api/1/news?image=1&domainurl=nation.com.pk&apikey=" + nation_apiKey;
-
+        String apiUrl = "https://newsdata.io/api/1/news?domainurl=nation.com.pk&apikey=" + nation_apiKey;
         // Make an HTTP GET request to the News API
         NewsApiResponse response = restTemplate.getForObject(apiUrl, NewsApiResponse.class);
+        String nextPage = response.getNextPage();
         List<NewsArticle> headlines = new ArrayList<>();
         if (response != null && response.getArticles() != null) {
             for (NewsArticle article : response.getArticles()) {
-                NewsArticle newsArticle = new NewsArticle(article.getTitle(), article.getLink(), article.getImage_url());
+                NewsArticle newsArticle = new NewsArticle(article.getTitle(), article.getLink(), article.getImage_url(), article.getPublishedDate());
                 headlines.add(newsArticle);
+            }
+        }
+        if(nextPage==null){
+            return headlines;
+        }
+        else {
+            apiUrl = "https://newsdata.io/api/1/news?domainurl=nation.com.pk&apikey=" + nation_apiKey + "&page=" + nextPage;
+            try {
+                response = restTemplate.getForObject(apiUrl, NewsApiResponse.class);
+                System.out.println("in try");
+                if (response != null && response.getArticles() != null) {
+                    for (NewsArticle article : response.getArticles()) {
+                        NewsArticle newsArticle = new NewsArticle(article.getTitle(), article.getLink(), article.getImage_url(), article.getPublishedDate());
+                        headlines.add(newsArticle);
+                    }
+                }
+            } catch (HttpClientErrorException.TooManyRequests e) {
+                // Handle rate limit exceeded error
+                // Extract rate limit headers from e.getResponseHeaders() and wait accordingly
+                int retryAfterSeconds = 10;
+                Thread.sleep(retryAfterSeconds * 1000);
+                System.out.println("in catch");
+
+                response = restTemplate.getForObject(apiUrl, NewsApiResponse.class);
+                if (response != null && response.getArticles() != null) {
+                    for (NewsArticle article : response.getArticles()) {
+                        NewsArticle newsArticle = new NewsArticle(article.getTitle(), article.getLink(), article.getImage_url(), article.getPublishedDate());
+                        headlines.add(newsArticle);
+                    }
+                }
             }
         }
 
@@ -124,7 +182,7 @@ public class NewsService {
             List<NewsArticle> headlines = new ArrayList<>();
             if (response != null && response.getArticles() != null) {
                 for (NewsArticle article : response.getArticles()) {
-                    NewsArticle newsArticle = new NewsArticle(article.getTitle(), article.getLink(), article.getImage_url());
+                    NewsArticle newsArticle = new NewsArticle(article.getTitle(), article.getLink(), article.getImage_url(), article.getPublishedDate());
                     headlines.add(newsArticle);
                 }
             }
@@ -138,7 +196,7 @@ public class NewsService {
             System.out.println("in try");
             if (response != null && response.getArticles() != null) {
                 for (NewsArticle article : response.getArticles()) {
-                    NewsArticle newsArticle = new NewsArticle(article.getTitle(), article.getLink(), article.getImage_url());
+                    NewsArticle newsArticle = new NewsArticle(article.getTitle(), article.getLink(), article.getImage_url(), article.getPublishedDate());
                     headlines.add(newsArticle);
                 }
             }
@@ -152,7 +210,7 @@ public class NewsService {
             response = restTemplate.getForObject(apiUrl, NewsApiResponse.class);
             if (response != null && response.getArticles() != null) {
                 for (NewsArticle article : response.getArticles()) {
-                    NewsArticle newsArticle = new NewsArticle(article.getTitle(), article.getLink(), article.getImage_url());
+                    NewsArticle newsArticle = new NewsArticle(article.getTitle(), article.getLink(), article.getImage_url(), article.getPublished_date());
                     headlines.add(newsArticle);
                 }
             }
@@ -162,7 +220,7 @@ public class NewsService {
         return headlines;
     }
 
-    public List<NewsArticle> getNews(NewsApiResponse response){
-        return null;
-    }
+//    public List<NewsArticle> getNews(NewsApiResponse response){
+//        return null;
+//    }
 }

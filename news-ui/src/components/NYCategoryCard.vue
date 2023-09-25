@@ -42,11 +42,15 @@ export default {
         "9.jpg",
         "10.jpg",
         "11.jpg",
-        
-        // "12.jpeg",
-        // "13.avif",
-        // "14.avif",
-        // "15.jpg",
+        "12.jpg",
+        "13.jpg",
+        "14.jpg",
+        "15.jpg",
+        "16.jpg",
+        "17.jpg",
+        "18.jpg",
+        "19.jpg",
+        "20.jpg"
 
       ],
     };

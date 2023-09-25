@@ -13,8 +13,11 @@ public class NewsArticle {
     private String link;
     @JsonProperty("image_url")
     private String image_url;
+    @JsonProperty("pubDate")
+    private String publishedDate;
 
-
+    @JsonProperty("published_date")
+    private String published_date;
     @JsonProperty("abstract")
     private String abstractText;
     @JsonProperty("url")
@@ -31,10 +34,11 @@ public class NewsArticle {
         this.pageUrl = pageUrl;
         this.image = img;
     }
-    public NewsArticle(String title, String link, String image_url) {
+    public NewsArticle(String title, String link, String image_url, String publishedDate) {
         this.title = title;
         this.link = link;
         this.image_url = image_url;
+        this.publishedDate = publishedDate;
     }
     public String getPageUrl() {
         return pageUrl;
@@ -95,5 +99,21 @@ public class NewsArticle {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public String getPublished_date() {
+        return published_date;
+    }
+
+    public void setPublished_date(String published_date) {
+        this.published_date = published_date;
+    }
+
+    public String getPublishedDate() {
+        return publishedDate;
+    }
+
+    public void setPublishedDate(String publishedDate) {
+        this.publishedDate = publishedDate;
     }
 }

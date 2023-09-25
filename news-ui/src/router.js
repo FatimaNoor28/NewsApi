@@ -1,8 +1,7 @@
-// import NewsUI from "./components/News.vue"
 import NYNewsList from "./components/NYNewsList.vue"
 import NYCategories from "./components/NYCategories.vue" 
-// import NYCategoryCard from "./components/NYCategoryCard.vue";
-// import NYNews from "./components/NYNews.vue";
+import NationHeadlines from "./components/NationHeadlines.vue"
+import NationCategories from "./components/NationCategories.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 
@@ -22,7 +21,16 @@ const routes = [
       component: NYCategories,
       path: "/news/nyTimes/category",
     }, 
-    
+    {
+      name: "NationHeadlines",
+      component: NationHeadlines,
+      path: "/news/nation",
+    }, 
+    {
+      name: "NationCategories",
+      component: NationCategories,
+      path: "/news/nation/category",
+    }, 
     // {
     //   name: "NY-News",
     //   component: NYNews,

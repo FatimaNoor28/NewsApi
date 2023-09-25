@@ -19,19 +19,18 @@ public class NewsController {
     public List<NewsArticle> getNYNewsHeadlines(@RequestParam(value = "country", required = false, defaultValue = "us") String country,
                                               @RequestParam(value = "category", required = false, defaultValue = "") String category,
                                               @RequestParam(value = "language", required = false, defaultValue = "all") String language) {
-        return newsService.getNewsHeadlines( category, language);
+        return newsService.getNyTimesNewsHeadlines( category, language);
     }
-    @GetMapping("/nyTimes/{category}/{page}")
+    @GetMapping("/nyTimes/{category}")
     @Async
-    public List<Docs> getNYNews(@PathVariable String category,
-                              @PathVariable int page) throws IOException {
-        return newsService.getNews(category, page);
+    public List<Docs> getNYNews(@PathVariable String category) throws IOException { //@PathVariable int page
+        return newsService.getNyTimesNews(category);
     }
 
 
     @GetMapping("/nation/headlines")
     public List<NewsArticle> getNationNewsHeadlines(@RequestParam(value = "country", required = false, defaultValue = "pk") String country,
-                                                    @RequestParam(value = "language", required = false, defaultValue = "all") String language) {
+                                                    @RequestParam(value = "language", required = false, defaultValue = "all") String language) throws InterruptedException {
         return newsService.getNationNewsHeadlines(country, language);
     }
     @GetMapping("/nation/{category}")

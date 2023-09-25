@@ -10,6 +10,7 @@ public class Docs {
     private String abstractText;
     @JsonProperty("url")
     private String pageUrl;
+    @JsonProperty("title")
     private String title;
     @JsonProperty("image")
     private String imageUrl;
