@@ -1,8 +1,5 @@
 package com.scraping.training.news;
 
-import lombok.Data;
-
-@Data
 public class MediaMetadata {
     private String url;
     private String format;

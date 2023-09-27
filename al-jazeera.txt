@@ -1,0 +1,29 @@
+al jazeera 
+
+science
+https://rss.app/feeds/8X2Qe1K8B57it7ku.xml
+
+technology
+https://rss.app/feeds/fpeYvnNKPKYg49Is.xml
+
+latest
+https://rss.app/feeds/T46MCNPSSphWj6xr.xml
+with media in content and enclosure
+
+sports:
+https://rss.app/feeds/wax4rEQZVh1Aeg92.xml
+
+asia
+https://rss.app/feeds/BdoP3yvlrXAwPiiT.xml
+
+economy
+https://rss.app/feeds/m6SD3GHZFTsDspap.xml
+
+us and canada
+https://rss.app/feeds/WQTB7WgavqoLDjdT.xml
+
+international
+https://rss.app/feeds/GPDRFbK53DOyAdv7.xml
+
+culture=entertainment
+https://rss.app/feeds/g1I1KTu9sJ6BOMwG.xml

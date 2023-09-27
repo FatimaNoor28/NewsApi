@@ -1,11 +1,9 @@
 package com.scraping.training.news;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
 
 import java.util.List;
 
-@Data
 public class NewsArticle {
 
     private String title;
@@ -23,16 +21,16 @@ public class NewsArticle {
     @JsonProperty("url")
     private String pageUrl;
 
-    //private List<String> imageUrl;
     String image;
     @JsonProperty("media")
     private List<Media> media;
     public NewsArticle() {}
-    public NewsArticle(String title, String abstractText, String pageUrl, List<Media> media, List<String> imageUrl, String img) {
+    public NewsArticle(String title, String abstractText, String pageUrl, List<Media> media, List<String> imageUrl, String img, String published_date) {
         this.title = title;
         this.abstractText = abstractText;
         this.pageUrl = pageUrl;
         this.image = img;
+        this.published_date = published_date;
     }
     public NewsArticle(String title, String link, String image_url, String publishedDate) {
         this.title = title;

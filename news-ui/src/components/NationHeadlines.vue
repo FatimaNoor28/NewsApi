@@ -4,9 +4,15 @@
      <NationNavFooter />
    </div>
    <div>
+    <h1>The Nation News Headlines</h1>
      <div class="news-cards">
-       <NationNewsCard v-for="(article, index) in articles" :key="index" :article="article"></NationNewsCard>
-     </div>
+      <br>
+      <br>
+       <div class="item" v-if="articles.length > 0">
+         <NationNewsCard v-for="(article, index) in articles" :key="index" :index="index" :article="article"
+           :category="category">
+         </NationNewsCard>
+       </div>     </div>
    </div>
   </template>
    
@@ -31,10 +37,10 @@ import NationNewsCard from './NationNewsCard.vue';
      this.fetchNewsData();
    },
    methods: {
-     getNews(category) {
-       console.log("passing category to Nation Categories page: ", category);
-       this.$router.push({name:'NationCategories', query: { category: category }});
-     },
+    //  getNews(category) {
+    //    console.log("passing category to Nation Categories page: ", category);
+    //    this.$router.push({name:'NationCategories', query: { category: category }});
+    //  },
      fetchNewsData() {
        NewsService.getNationNews()
          .then((response) => {

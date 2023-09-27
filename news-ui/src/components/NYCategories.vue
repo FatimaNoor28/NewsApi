@@ -3,7 +3,7 @@
   <NYNavFooter />
  </div>
   <div class="news-cards">
-    <h1>News Section</h1>
+    <h1>{{this.category}} news section</h1>
     <div class="item" v-if="articles.length > 0">
       <NYCategoryCard v-for="(article, index) in articles" :key="index" :index="index" :article="article"
         :category="category">

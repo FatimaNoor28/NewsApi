@@ -8,7 +8,7 @@
 
     <div class="content">
       <h2>{{ article.title }}</h2>
-      <p>{{ article.abstract }}</p>
+      <p>{{ article.pub_date }}</p>
       <!-- <p>Category: {{ category }}</p> -->
     </div>
     <div class="footer">

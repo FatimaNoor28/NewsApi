@@ -5,11 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50fc47e9-150d-45e7-adbb-22b3e76c609d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/scrapping/training/news/NewsControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewsByte-BE.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../NewsByte-BE.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/Docs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/Docs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/MediaMetadata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/MediaMetadata.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsArticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scraping/training/news/NewsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/config/RestTemplateConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/Docs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/Media.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/MediaMetadata.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsApiResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsArticle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scraping/training/news/NewsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/node_modules/.cache/eslint/623f5ebe.json" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/node_modules/.cache/eslint/623f5ebe.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/src/components/NYCategories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/components/NYCategories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/src/components/NYCategoryCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/components/NYCategoryCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/src/components/NYNewsCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/components/NYNewsCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/src/components/NYNewsList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/components/NYNewsList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/src/components/NationHeadlines.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/components/NationHeadlines.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/src/components/NationNavFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/components/NationNavFooter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../news-ui/src/components/NationNewsCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../news-ui/src/components/NationNewsCard.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +62,7 @@
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: -1
+  &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2Vcd3BdPATAtAm1agdctemEyFon" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -45,21 +70,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="JUnit.NewsControllerTest.testGetNationNewsHeadlines">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.scraping.training.Application" />
-      <module name="backend" />
+      <module name="Api" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.scraping.training.*" />
@@ -70,9 +96,75 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NewsControllerTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.scrapping.training.news.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.scrapping.training.news" />
+      <option name="MAIN_CLASS_NAME" value="com.scrapping.training.news.NewsControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.scrapping.training.news.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.scrapping.training.news" />
+      <option name="MAIN_CLASS_NAME" value="com.scrapping.training.news.NewsControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewsControllerTest.testGetNYNewsHeadlines (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.scrapping.training.news.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.scrapping.training.news" />
+      <option name="MAIN_CLASS_NAME" value="com.scrapping.training.news.NewsControllerTest" />
+      <option name="METHOD_NAME" value="testGetNYNewsHeadlines" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewsControllerTest.testGetNationNewsHeadlines" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.scrapping.training.news.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.scrapping.training.news" />
+      <option name="MAIN_CLASS_NAME" value="com.scrapping.training.news.NewsControllerTest" />
+      <option name="METHOD_NAME" value="testGetNationNewsHeadlines" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.NewsControllerTest.testGetNationNewsHeadlines" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.NewsControllerTest (1)" />
+        <item itemvalue="JUnit.NewsControllerTest.testGetNYNewsHeadlines (1)" />
+        <item itemvalue="JUnit.NewsControllerTest" />
       </list>
     </recent_temporary>
   </component>

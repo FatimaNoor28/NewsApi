@@ -8,7 +8,7 @@
 
     <div class="content">
       <h2>{{ article.title }}</h2>
-      <p>{{ article.abstract }}</p>
+      <p>{{ article.published_date }}</p>
     </div>
     <div class="footer">
       <i class="fas fa-chevron-right"></i>

@@ -50,7 +50,7 @@ public class NewsService {
             img = mediaMetadata.get(1).getUrl();
             System.out.println(img);
         }
-        NewsArticle newsArticle = new NewsArticle(article.getTitle() , article.getAbstractText(), article.getPageUrl(), article.getMedia(), images, img);
+        NewsArticle newsArticle = new NewsArticle(article.getTitle() , article.getAbstractText(), article.getPageUrl(), article.getMedia(), images, img, article.getPublished_date());
         return newsArticle;
     }
 
@@ -106,6 +106,7 @@ public class NewsService {
                 String webUrl = doc.path("web_url").asText();
                 String headline = doc.path("headline").path("main").asText();
                 JsonNode multimediaArray = doc.path("multimedia");
+                String pub_date = doc.path("pub_date").asText();
                 String multimediaUrl = "";
                 // Iterate over multimedia items
                 Iterator<JsonNode> multimediaItems = multimediaArray.elements();
@@ -119,7 +120,7 @@ public class NewsService {
                 System.out.println("Web URL: " + webUrl);
                 System.out.println("Headline: " + headline);
                 System.out.println("Multimedia URL: " + multimediaUrl);
-                docs.add(new Docs(abstractText,webUrl, headline, multimediaUrl));
+                docs.add(new Docs(abstractText,webUrl, headline, multimediaUrl, pub_date));
             }
         }
         return docs;

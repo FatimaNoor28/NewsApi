@@ -29,7 +29,7 @@
               </li>
               
               <li class="nav-item"  style="margin-right: 15px;">
-                <a class="nav-link active" aria-current="page" href="#" @click="getNews('fashion')">Entertainment</a>
+                <a class="nav-link active" aria-current="page" href="#" @click="getNews('entertainment')">Entertainment</a>
               </li>
   
            </ul>

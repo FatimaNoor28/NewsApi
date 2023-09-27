@@ -24,7 +24,7 @@
             <img class="card-img-top" :src="articles[0].image" alt="Card image cap" style="max-height: 50%;">
             <div class="card-body">
               <p class="text-md">{{ articles[0].title }}</p>
-              <p class="text-sm"><strong>{{ articles[0].abstract }}</strong></p>
+              <p class="text-sm"><strong>{{ articles[0].published_date }}</strong></p>
             </div>
           </div>
         </a>
@@ -38,7 +38,7 @@
               <img class="card-img-top img-fluid" :src="articles[1].image" alt="Card image cap">
               <div class="card-body" :class="{ 'hovered': isHovered }">
                 <p class="text-md">{{ articles[1].title }}</p>
-                <p class="text-md"><strong>{{ articles[1].abstract }}</strong></p>
+                <p class="text-md"><strong>{{ articles[1].published_date }}</strong></p>
               </div>
             </div>
           </a>
@@ -51,7 +51,7 @@
               <img class="card-img-top img-fluid" :src="articles[2].image" alt="Card image cap">
               <div class="card-body">
                 <p class="text-md">{{ articles[2].title }}</p>
-                <p class="text-md"><strong>{{ articles[2].abstract }}</strong></p>
+                <p class="text-md"><strong>{{ articles[2].published_date }}</strong></p>
               </div>
             </div>
           </a>
@@ -66,7 +66,7 @@
               <img class="card-img-top" :src="articles[3].image" alt="Card image cap">
               <div class="card-body" :class="{ 'hovered': isHovered }">
                 <p class="text-md">{{ articles[3].title }}</p>
-                <p class="text-md"><strong>{{ articles[3].abstract }}</strong></p>
+                <p class="text-md"><strong>{{ articles[3].published_date }}</strong></p>
               </div>
             </div>
           </a>
@@ -79,7 +79,7 @@
               <img class="card-img-top" :src="articles[4].image" alt="Card image cap">
               <div class="card-body" :class="{ 'hovered': isHovered }">
                 <p class="text-md">{{ articles[4].title }}</p>
-                <p class="text-md"><strong>{{ articles[4].abstract }}</strong></p>
+                <p class="text-md"><strong>{{ articles[4].published_date }}</strong></p>
               </div>
             </div>
           </a>
@@ -101,7 +101,7 @@
             <img class="card-img-top" :src="article.image" alt="Card image cap" style="max-height: 50%;">
             <div class="card-body">
               <p class="text-md">{{ article.title }}</p>
-              <p class="text-md"><strong>{{ article.abstract }}</strong></p>
+              <p class="text-md"><strong>{{ article.published_date }}</strong></p>
             </div>
           </div>
         </a>
@@ -118,6 +118,7 @@
         <img class="card-img-top" :src="articles[9].image" alt="Card image cap" style="max-height: 300px;">
         <div class="card-body">
           <p class="text-md">{{ articles[9].title }}</p>
+          <p class="text-md"><strong>{{ articles[9].published_date }}</strong></p>
         </div>
       </div>
 
@@ -136,6 +137,7 @@
                 </div>
               </div>
             <h6 style="color:black;">{{ article.title }}</h6>
+            <p class="text-md"><strong>{{ article.published_date }}</strong></p>
           </a>
 
           <hr>
@@ -155,6 +157,8 @@
               <div class="col-5">
                 <div>
                   <p style="max-width: 90%; max-height: 100%; color:black;">{{ article.title }}</p>
+                  <p class="text-md"><strong>{{ article.published_date }}</strong></p>
+
                 </div>
               </div>
             </div>

@@ -1,0 +1,9 @@
+com\scraping\training\news\NewsController.class
+com\scraping\training\config\RestTemplateConfig.class
+com\scraping\training\news\Media.class
+com\scraping\training\news\NewsArticle.class
+com\scraping\training\news\NewsService.class
+com\scraping\training\Application.class
+com\scraping\training\news\NewsApiResponse.class
+com\scraping\training\news\MediaMetadata.class
+com\scraping\training\news\Docs.class
